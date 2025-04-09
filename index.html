@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DigifyBD - Elevate Your Brand</title>
+  <link rel="icon" type="image/x-icon" href="DigifyBD-Logo.png">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Alpine.js for interactivity (mobile menu, etc.) -->
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="antialiased text-gray-900">
+
+  <!-- Navigation -->
+  <nav class="bg-white shadow" data-aos="fade-down" data-aos-duration="800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <!-- Logo & Desktop Nav -->
+        <div class="flex">
+          <a href="#" class="flex-shrink-0 flex items-center">
+            <!-- Replace 'DigifyBD-Logo.png' with the correct path to your logo if needed -->
+            <img class="h-20 w-20" src="DigifyBD-Logo.png" alt="DigifyBD Logo">
+            <!-- <span class="ml-2 font-bold text-xl">DigifyBD</span> -->
+          </a>
+          <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+            <a href="#hero" class="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+              Home
+            </a>
+            <a href="#about" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+              About
+            </a>
+            <a href="#services" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+              Services
+            </a>
+            <a href="#contact" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+              Contact
+            </a>
+          </div>
+        </div>
+        <!-- Mobile Menu Button -->
+        <div class="-mr-2 flex items-center sm:hidden" x-data="{ open: false }">
+          <button @click="open = !open" type="button" class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-controls="mobile-menu" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <!-- Hamburger Icon -->
+            <svg x-show="!open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
+            </svg>
+            <!-- Close Icon -->
+            <svg x-show="open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          <!-- Mobile Navigation Links -->
+          <div class="sm:hidden" x-show="open" @click.away="open = false">
+            <div class="pt-2 pb-3 space-y-1">
+              <a href="#hero" class="bg-indigo-50 border-indigo-500 text-indigo-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">
+                Home
+              </a>
+              <a href="#about" class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">
+                About
+              </a>
+              <a href="#services" class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">
+                Services
+              </a>
+              <a href="#contact" class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">
+                Contact
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section
+    id="hero"
+    class="bg-cover bg-center"
+    style="background-image: url('hero.jpg');"
+    data-aos="fade-in"
+    data-aos-duration="1000"
+  >
+    <div class="bg-gray-900 bg-opacity-50">
+      <div class="max-w-7xl mx-auto px-4 py-24 sm:py-32 text-center">
+        <h1
+          class="text-4xl font-extrabold text-white sm:text-5xl"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
+          Elevate Your Brand
+        </h1>
+        <p
+          class="mt-4 text-xl text-gray-200"
+          data-aos="fade-up"
+          data-aos-delay="500"
+        >
+          Innovative solutions to help your business stand out.
+        </p>
+        <div class="mt-8" data-aos="zoom-in" data-aos-delay="700">
+          <a
+            href="#contact"
+            class="px-6 py-3 bg-indigo-600 text-white rounded-md text-lg font-medium hover:bg-indigo-500"
+          >
+            Get Started
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section
+    id="about"
+    class="py-16 bg-white"
+    data-aos="fade-right"
+    data-aos-duration="900"
+  >
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center">
+        <h2 class="text-3xl font-bold text-gray-900">About Us</h2>
+        <p class="mt-4 text-lg text-gray-600">
+          DigifyBD (<a href="https://digifybd.com" class="text-indigo-600 underline">digifybd.com</a>) specializes in comprehensive branding and marketing solutions—from logos and slogans to packaging design and product photography.
+        </p>
+      </div>
+      <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="flex flex-col justify-center">
+          <h3 class="text-2xl font-semibold text-gray-800">Our Mission</h3>
+          <p class="mt-2 text-gray-600">
+            Our mission is to empower brands by providing innovative, effective solutions that drive results and inspire engagement. We work hand-in-hand with our clients to ensure their unique story is communicated effectively.
+          </p>
+        </div>
+        <div>
+          <img
+            src="https://source.unsplash.com/600x400/?marketing"
+            alt="About DigifyBD"
+            class="rounded-lg shadow-lg"
+            data-aos="fade-left"
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section
+    id="services"
+    class="py-16 bg-gray-50"
+    data-aos="fade-up"
+    data-aos-duration="900"
+  >
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center">
+        <h2 class="text-3xl font-bold text-gray-900">Our Services</h2>
+        <p class="mt-4 text-lg text-gray-600">
+          From branding essentials to creative design, we offer a wide range of services to showcase your company in the best possible light.
+        </p>
+      </div>
+      <!-- Updated to 4 columns to reflect new offerings -->
+      <div class="mt-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Brand Strategy -->
+        <div
+          class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow duration-300"
+          data-aos="zoom-in"
+          data-aos-delay="200"
+        >
+          <div class="mb-4 flex justify-center">
+            <img
+              src="https://source.unsplash.com/100x100/?strategy"
+              alt="Brand Strategy icon"
+              class="mx-auto"
+            >
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800 text-center">
+            Brand Strategy
+          </h3>
+          <p class="mt-2 text-gray-600 text-center">
+            Develop a clear, focused strategy to differentiate your brand and engage your target audience.
+          </p>
+        </div>
+        <!-- Logos & Slogans -->
+        <div
+          class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow duration-300"
+          data-aos="zoom-in"
+          data-aos-delay="300"
+        >
+          <div class="mb-4 flex justify-center">
+            <img
+              src="https://source.unsplash.com/100x100/?logo,slogan"
+              alt="Logos & Slogans icon"
+              class="mx-auto"
+            >
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800 text-center">
+            Logos & Slogans
+          </h3>
+          <p class="mt-2 text-gray-600 text-center">
+            Craft powerful visual identities and taglines that resonate with your audience.
+          </p>
+        </div>
+        <!-- Packaging & Product Photo -->
+        <div
+          class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow duration-300"
+          data-aos="zoom-in"
+          data-aos-delay="400"
+        >
+          <div class="mb-4 flex justify-center">
+            <img
+              src="https://source.unsplash.com/100x100/?packaging,photo"
+              alt="Packaging & Product Photography icon"
+              class="mx-auto"
+            >
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800 text-center">
+            Packaging & Product Photo
+          </h3>
+          <p class="mt-2 text-gray-600 text-center">
+            Make a lasting impression with professional packaging design and high-quality product photography.
+          </p>
+        </div>
+        <!-- Digital Marketing -->
+        <div
+          class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow duration-300"
+          data-aos="zoom-in"
+          data-aos-delay="500"
+        >
+          <div class="mb-4 flex justify-center">
+            <img
+              src="https://source.unsplash.com/100x100/?marketing,digital"
+              alt="Digital Marketing icon"
+              class="mx-auto"
+            >
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800 text-center">
+            Digital Marketing
+          </h3>
+          <p class="mt-2 text-gray-600 text-center">
+            Extend your reach with targeted campaigns and strategies that drive online engagement.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section
+    id="contact"
+    class="py-16 bg-white"
+    data-aos="fade-up"
+    data-aos-duration="900"
+  >
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center">
+        <h2 class="text-3xl font-bold text-gray-900">Get in Touch</h2>
+        <p class="mt-4 text-lg text-gray-600">
+          We’d love to hear from you. Reach out for a consultation or any inquiries.
+        </p>
+      </div>
+      <div class="mt-12 flex justify-center" data-aos="flip-up" data-aos-delay="300">
+        <form action="#" method="POST" class="w-full max-w-lg bg-gray-50 p-8 rounded-lg shadow">
+          <div class="mb-4">
+            <label class="block text-gray-700" for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="mt-1 w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+            >
+          </div>
+          <div class="mb-4">
+            <label class="block text-gray-700" for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="mt-1 w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+            >
+          </div>
+          <div class="mb-4">
+            <label class="block text-gray-700" for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              required
+              class="mt-1 w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+            ></textarea>
+          </div>
+          <div>
+            <button
+              type="submit"
+              class="w-full py-3 bg-indigo-600 text-white rounded-md font-medium hover:bg-indigo-500"
+            >
+              Send Message
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer
+    class="bg-gray-800 text-gray-300 py-8"
+    data-aos="fade-up"
+    data-aos-duration="800"
+  >
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p>&copy; 2025 DigifyBD. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Initialize AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>
